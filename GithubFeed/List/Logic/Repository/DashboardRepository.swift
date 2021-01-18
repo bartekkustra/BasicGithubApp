@@ -12,7 +12,7 @@ final class DashboardRepository {
         case selfDeallocated
     }
     
-    //TODO: add useCase protocol
+    //TODO: Add protocol for useCase
     private let teamUseCase: GetTeamsUseCase
     private let activityUseCase: GetActivityUseCase
     private let repoUseCase: GetRepositoryUseCase

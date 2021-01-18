@@ -11,6 +11,7 @@ import CoreData
 
 final class ListViewController: UICollectionViewController {
     private let viewFactory: ListViewFactory
+    //TODO: Implement showing and hiding errorState
     private let viewManager: ListViewManaging?
     private let viewModel: ListViewModel
     private var dataSource: UICollectionViewDataSource & ListDataSourceProtocol
@@ -114,11 +115,12 @@ final class ListViewController: UICollectionViewController {
     }
 
     private func handleError(_ error: Error) {
+        //TODO: Refactor updating data for offline
         let storedData = retriveData()
         viewModel.updateForOffline(storedData: storedData)
         dataSource.sections = viewModel.sections
         listView.collectionView.reloadData()
-        //TODO: add error handler
+        //TODO: Add error handler
         navigationItem.title = "Error occured"
     }
 
@@ -139,7 +141,7 @@ final class ListViewController: UICollectionViewController {
     }
     
     @objc private func filterRepository(sender: UIBarButtonItem) {
-        //TODO: add viewManager
+        //TODO: Add to viewManager
         if viewModel.filters.contains(.repository) {
             listView.filterRepositoryButton.backgroundColor = .navyBlue()
             viewModel.remove(currentFilters: .repository)
@@ -151,7 +153,7 @@ final class ListViewController: UICollectionViewController {
     }
     
     @objc private func filterTeam(sender: UIBarButtonItem) {
-        //TODO: add viewManager
+        //TODO: Add to viewManager
         if viewModel.filters.contains(.team) {
             viewModel.remove(currentFilters: .team)
             listView.filterTeamButton.backgroundColor = .navyBlue()
@@ -163,7 +165,7 @@ final class ListViewController: UICollectionViewController {
     }
     
     @objc private func filterActivity(sender: UIBarButtonItem) {
-        //TODO: add viewManager
+        //TODO: Add to viewManager
         if viewModel.filters.contains(.activity) {
             viewModel.remove(currentFilters: .activity)
             listView.filterActivityButton.backgroundColor = .navyBlue()
@@ -278,6 +280,7 @@ extension ListViewController {
             do {
                 try context.save()
             } catch {
+                //TODO: Hadnle error
                 fatalError("Error occured")
             }
         }
@@ -304,7 +307,7 @@ extension ListViewController {
                     storedResults.append(result)
                 }
             } catch {
-                //TODO: hadnle error
+                //TODO: Hadnle error
                 fatalError("Error occured")
             }
         }

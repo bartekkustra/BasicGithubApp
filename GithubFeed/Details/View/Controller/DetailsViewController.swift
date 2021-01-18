@@ -52,7 +52,7 @@ final class DetailsViewController: UIViewController {
     }
     
     private func handleError(_ error: Error) {
-        //TODO: add error handler
+        //TODO: Add error handler
         navigationItem.title = "Error occured"
     }
     

@@ -72,7 +72,7 @@ final class WelcomeScreenViewController: UIViewController {
                 case let .failure(error):
                     self?.welcomeScreenView.activityIndicator.stopAnimating()
                     fatalError("Error occured: \(error)")
-                    //TODO: handleError
+                    //TODO: HandleError
                 }
             }
         }

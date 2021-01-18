@@ -45,7 +45,7 @@ final class ListItemCell: UICollectionViewCell, ItemCellInterface {
         itemDescription.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            //TODO: check constraints
+            //TODO: Check constraints
             title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             

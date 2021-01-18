@@ -21,7 +21,7 @@ final class StoredDataMapper {
 }
 
 extension StoredDataMapper: StoredDataMapping {
-    //TODO: refactor
+    //TODO: Refactor
     func map(from entities: [StoredItemEntity]) -> [ListSectionProtocol] {
         var items: [ListItemProtocol] = []
         
@@ -29,7 +29,7 @@ extension StoredDataMapper: StoredDataMapping {
             let newItem = ListItem(
                 title: item.itemTitle,
                 shortTitle: item.itemShortTitle,
-                //TODO: fix description
+                //TODO: Fix description
                 description: item.itemDescription,
                 image: nil
             )

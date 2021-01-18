@@ -44,7 +44,7 @@ final class CustomItemCell: UICollectionViewCell, ItemCellInterface {
         itemDescription.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            //TODO: check constraints
+            //TODO: Check constraints
             title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             title.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -20),
             

@@ -46,7 +46,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "DashboardModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                //TODO: handle error
+                //TODO: Handle error
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -60,7 +60,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                //TODO: handle error
+                //TODO: Handle error
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
